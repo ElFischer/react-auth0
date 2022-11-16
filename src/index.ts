@@ -15,12 +15,12 @@ dotenv.config();
 /**
  * App Variables
  */
-
-if (!process.env.PORT) {
+const port = '4040'
+if (!port) {
    process.exit(1);
 }
 
-const PORT: number = parseInt(process.env.PORT as string, 10);
+const PORT: number = parseInt(port as string, 10);
 
 const app = express();
 
@@ -40,6 +40,6 @@ app.use(notFoundHandler);
  * Server Activation
  */
 
-app.listen(PORT, () => {
-   console.log(`Listening on port ${PORT}`);
+app.listen(port, () => {
+   console.log(`Listening on port ${port}`);
 });
