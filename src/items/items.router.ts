@@ -18,6 +18,8 @@ export const itemsRouter = express.Router();
  * Controller Definitions
  */
 
+itemsRouter.use(checkJwt);
+
 // GET items
 
 itemsRouter.get("/", async (req: Request, res: Response) => {
@@ -48,9 +50,7 @@ itemsRouter.get("/:id", async (req: Request, res: Response) => {
     }
 });
 
-// ✨ New! Mount authorization middleware
 
-itemsRouter.use(checkJwt);
 
 // POST items
 
