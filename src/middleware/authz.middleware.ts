@@ -9,11 +9,11 @@ export const checkJwt = jwt({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 5,
-    jwksUri: `https://devsrow.eu.auth0.com/.well-known/jwks.json`
+    jwksUri: `https://dev-caseos-tk100.eu.auth0.com/.well-known/jwks.json`
   }),
 
   // Validate the audience and the issuer.
-  audience: 'https://menu-api.example.com',
-  issuer: `https://devsrow.eu.auth0.com/`,
+  audience: 'https://caseos/test',
+  issuer: `https://dev-caseos-tk100.eu.auth0.com/`,
   algorithms: ["RS256"]
 });
