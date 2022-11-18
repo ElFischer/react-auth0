@@ -23,7 +23,7 @@ if (!port) {
 const PORT: number = parseInt(port as string, 10);
 
 const app = express();
-
+var server = require('http').createServer(app);
 /**
  *  App Configuration
  */
@@ -40,6 +40,6 @@ app.use(notFoundHandler);
  * Server Activation
  */
 
-app.listen(port, () => {
-   console.log(`Listening on port ${port}`);
-});
+ server.listen(PORT, () => console.log(
+   `API listening on port: ${PORT}!`
+));
