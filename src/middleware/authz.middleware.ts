@@ -13,6 +13,7 @@ export const checkJwt = jwt({
   }),
 
   // Validate the audience and the issuer.
+  requestProperty: 'auth', 
   audience: 'https://caseos/test',
   issuer: `https://dev-caseos-tk100.eu.auth0.com/`,
   algorithms: ["RS256"]
